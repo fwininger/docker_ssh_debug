@@ -128,5 +128,5 @@ encoded shared secret:
 
 ## Security disclamer
 
-Please use only this projet for debuging purpose. The docker image is build with insecure parameter `DEBUG_KEXECDH`.
+Please use only this projet for debuging purpose. The docker image is build with insecure parameter (`DEBUG_KEXECDH`).
 

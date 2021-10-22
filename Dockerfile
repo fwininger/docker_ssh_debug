@@ -6,8 +6,8 @@ RUN useradd --create-home --shell '/bin/bash' --comment 'Test user' 'test' && ec
 
 RUN mkdir /var/lib/sshd && chmod -R 700 /var/lib/sshd/ && chown -R root:sys /var/lib/sshd/ && useradd -r -U -d /var/lib/sshd/ -c "sshd privsep" -s /bin/false sshd
 
-RUN wget -c https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.0p1.tar.gz && tar -xzf openssh-8.0p1.tar.gz \
-  && cd openssh-8.0p1/ && sed -i '1s/^/#define DEBUG_KEXECDH 1 /' kex.h \
+RUN wget -c https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-8.8p1.tar.gz && tar -xzf openssh-8.8p1.tar.gz \
+  && cd openssh-8.8p1/ && sed -i '1s/^/#define DEBUG_KEXECDH 1 /' kex.h \
   && ./configure --with-md5-passwords --with-pam --with-selinux --with-privsep-path=/var/lib/sshd/ --sysconfdir=/etc/ssh \
   && make && make install
 

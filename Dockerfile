@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:bullseye
 
 RUN apt-get update && apt-get install wget sudo build-essential zlib1g-dev libssl-dev libpam0g-dev libselinux1-dev -y
 
